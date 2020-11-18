@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+파이썬 사용하기 위해선 중괄호{}안에 적어야함 변수 출력 할꺼면 {}하나더 적어야함
+<a href="https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#ref-templates-builtins-tags"> 태그 관련 이쪽 참조</a>
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+      <!-- 하드코딩 버전 <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>-->
+        <!-- 깔끔 버전 -->  <li><a href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
+</html>

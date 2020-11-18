@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ question.question_text }}</h1>
+<ul>
+{% for choice in question.choice_set.all %}
+<!--    question에 대해 외래키를 갇고있는 초이스를 모두 가져와라-->
+<!--<ol>태그는 ordered list의 약자로, 숫자나 알파벳 등 순서가 있는 목록을 만드는 데 사용합니다
+<ul>태그는 unordered list의 약자로, 순서가 필요 없는 목록을 만듭니다
+<dl>태그는 definition list의 약자로, 사전처럼 용어를 설명하는 목록을 만듭니다.
+<ol>과 <ul>의 각 항목들을 나열할 때는 <li> 태그를 사용하는데 list item의 약자입니다.-->
+
+    <li>{{ choice.choice_text }}</li>
+{% endfor %} <!-- 말 그대로 endfor for 문 끝나는 지점 알려주기-->
+</ul>
+</body>
+</html>
