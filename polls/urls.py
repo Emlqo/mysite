@@ -1,7 +1,7 @@
 from django.urls import path
 from . import  views
 
-
+# 함수 기반  view
 app_name = 'polls'
 urlpatterns = [
     # ex: /polls/
@@ -22,3 +22,13 @@ urlpatterns = [
 # 버리고, 남은 텍스트인 "34/"를 〈polls.urls〉 URLconf로 전달하여 남은 처리를 진행합니다.
 # 거기에 '<int:question_id>/'와 일치
 # 127.0.0.1/polls/ 를 받고 mysite/urls에서 여기로 보내준다음  views로 이동시켜줌
+
+
+# ## 클래스 기반 view
+# app_name = 'polls'
+# urlpatterns = [
+#     path('', views.IndexView.as_view(), name='index'),
+#     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+#     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
+#     path('<int:question_id>/vote/', views.vote, name='vote'),
+# ]
