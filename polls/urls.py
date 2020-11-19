@@ -12,6 +12,7 @@ urlpatterns = [
     path('<int:question_id>/results/', views.results, name='results'),
     # ex: /polls/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
+
 ] ## 이름 index인 함수 호출
 
 # <int:question_id>/vote/ django의 url 패턴 예로 《/polls/34/》를 요청했다고 하면,
